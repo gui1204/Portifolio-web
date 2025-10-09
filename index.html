@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Guilherme | Portifólio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu_link">Inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu_link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu_link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu_link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="Inicio" class="cabecalho">
+        <div>
+            <img src="./Eu.png" alt="Foto de Victor Guilherme" class="Foto_perfil">
+            <h1>Victor guilherme</h1>
+            <p class="cabecalh_sub_titulo">Desenvolvedor full stack</p>
+        </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre_titulo">Sobre mim</h2>
+        <div class="sobre_caixa">
+            <p class="sobre_paragrafo">
+                Desenvolvedor Full Stack apaixonado por tecnologia, estudante de Ciência da Computação na USJT |
+                Universidade São Judas Tadeu, com experiência em JavaScript, Java, html, css3 e frameworks modernos.
+            </p>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos_titulo">Meus Projetos</h2>
+        <div class="projetos_caixa">
+
+            <div class="projetos_card">
+                <a href="https://github.com/gui1204/ProjetoA3.git" target="_blank">
+                    <img src="./E.jpeg" alt="E" class="projetos_imagem">
+                    <div class="caixa-textos-projeto">
+                        <h3 class="info_projetos"> Chat_bot HB20</h3>
+                        <p class="paragrafo_projetos">Chatbot inteligente desenvolvido para responder dúvidas sobre o
+                            HB20,
+                            utilizando processamento de linguagem natural e integração com manuais do veículo.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="projetos_card">
+            <a href="https://github.com/gui1204/Calculadora-simples.git" target="_blank">
+            <img src="./calc.png" alt="calc" class="projetos_imagem">
+            <div class="caixa-textos-projeto">
+                <h3 class="info_projetos"> Calculadora</h3>
+                <p class="paragrafo_projetos">Calculadora Simples em Java Um projeto básico de calculadora feita em
+                    Java, para praticar lógica, métodos e estruturas de decisão.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="projetos_card">
+            <a href="https://github.com/gui1204/armazenamento-de-comida.git" target="_blank">
+                <img src="./Arma.png" alt="Arma" class="projetos_imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info_projetos"> Armazem de alimento</h3>
+                    <p class="paragrafo_projetos">Aplicação em Java com Spring Boot e H2 Database para gestão e
+                        monitoramento de produtos alimentícios em armazenamento.</p>
+            </a>
+        </div>
+        </div>
+
+        </div>
+    </section>
+    <section id="contatos" class="contatos">
+        <h2 class="contatos_titulo">Entre em Contato</h2>
+        <form class="formulario_contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo_form">
+                <input placeholder="nome" class="campo_form" id="nome">
+            </div>
+            <div class="grupo_form">
+                <textarea class="campo_form" placeholder="Digite sua mensagem" rows="5" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao_form">Enviar Whatsapp</button>
+        </form>
+    </section>
+
+    <script>
+
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511914223911';
+
+            const texto = `Olá! Me chamo ${nome}. ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+            window.open(url, '_blank');
+        }
+
+    </script>
+</body>
+
+</html>
